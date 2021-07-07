@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="./templates/images/logo/logo16x16.png">
+	<title>News Nova</title>
+	<!-- <link rel="stylesheet" type="text/css" href="/templates/libraries/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/templates/libraries/bootstrap-icons-1.5.0/bootstrap-icons.css" /> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="/templates/css/style.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/site.css')}}" /> -->
+</head>
+
+<body>
+	<div id="root" class="container-md wrapper empty">
+		<!-- Input and user controls -->
+		<div class="row">
+			<div class="col col-12 col-lg-1 "></div>
+			<div class="col col-12 col-lg-10 ">
+				<div class="input-group">
+					<span class="input-group-text" id="basic-addon1">
+						<img src="./templates/images/logo/logo32x32.png"/>
+					</span>
+					<input type="text" id="query-input" class="form-control"
+						aria-label="Text input with segmented dropdown button"
+						placeholder="Search news articles">
+					<button type="button" id="search-button" class="btn btn-outline-secondary">
+						<i class="bi bi-search"></i>
+					</button>
+					<select id="language-select" class="form-select btn btn-outline-secondary language-select" aria-label="Default select example" value="en">
+						<option value="en">&#127468;&#127463; EN</option>
+						<option value="de">&#127465;&#127466; DE</option>
+					</select>
+				</div>
+				<div class="search-count">
+					<span id="search-count" class="link-secondary"></span>
+				</div>
+			</div>
+			<div class="col col-12 col-lg-1"></div>
+		</div>
+		<!-- Search results -->
+		<div class="row">
+			<div class="col col-12 col-lg-1 "></div>
+			<div class="col col-12 col-lg-10 ">
+				<ul id="search-results" class="list-group list-group-flush search-results"></ul>
+			</div>
+			<div class="col col-12 col-lg-1"></div>
+		</div>
+		<!-- Search more etc. -->
+		<div class="row">
+			<div class="col col-12 col-lg-1 "></div>
+			<div class="col col-12 col-lg-10 ">
+				<div id="post-search-container"></div>
+			</div>
+			<div class="col col-12 col-lg-1"></div>
+		</div>
+	</div>
+
+	<!-- Templates -->
+	<template id="search-result-item">
+		<li class="list-group-item">
+			<div class="row">
+				<div class="col col-12">
+					<h4>
+						<a href="" class="title"></a>
+					</h4>
+					<div>
+						<a href="" class="url link-success"></a>
+					</div>
+					<div>
+						<img src="" class="img-thumbnail media hide" alt="media" />
+						<span class="summary"></span>
+						<small class="link-secondary">
+							<span>published on: </span>
+							<span class="publishedDate "></span>
+						</small>
+					</div>
+				</div>
+			</div>
+
+		</li>
+	</template>
+	<template id="search-result-failure">
+		<div class="alert alert-light" role="alert"><em class="search-failure"></em></div>
+	</template>
+	<template id="search-more-button">
+		<button type="button" class="btn btn-light-ouline btn-lg search-more-button full-width">More results</button>
+	</template>
+	<template id="loader">
+		<div class="loading">
+			<div class="spinner-border text-secondary" role="status">
+				<span class="visually-hidden">Loading...</span>
+			</div>
+		</div>
+	</template>
+
+	<script type="text/javascript">
+		const process = { 
+			env: {
+				NEWSCATCHER_API_ENDPOINT:  "{{ NEWSCATCHER_API_ENDPOINT }}",
+				NEWSCATCHER_API_KEY: "{{ NEWSCATCHER_API_KEY }}",
+				NEWSCATCHER_API_HOST: "{{ NEWSCATCHER_API_HOST }}"
+			} 
+		}
+	</script>
+	<!-- <script type="text/javascript" src="/templates/libraries/bootstrap/js/bootstrap.min.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="/templates/js/search.js"></script>
+</body>
+
+</html>

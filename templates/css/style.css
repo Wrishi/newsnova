@@ -1,0 +1,36 @@
+.wrapper {
+    transition: 0.5s;
+    padding: 20px 0;
+}
+.empty {
+    padding-top: 200px;
+}
+
+.language-select {
+    max-width: 90px;
+}
+
+.search-count {
+    padding: 10px 0;
+}
+
+.search-results {
+    padding: 20px 0;
+}
+
+.media {
+    width: 200px;
+    margin-right: 20px;
+    float: left;
+}
+.hide {
+    display: none;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.loading {
+    text-align: center;
+}
