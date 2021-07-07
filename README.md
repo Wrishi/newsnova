@@ -1,6 +1,8 @@
 # <img src="templates/images/logo/logo32x32.png"/>  News Nova
 
-A tiny little news search powered by Newscatcher API. Logo inspired by N(orth)E(ast)W(est)S(outh) with Tibetian colors associated with cardinal direction as written in https://en.wikipedia.org/wiki/Cardinal_direction. The UI is powered by bootstrap: https://getbootstrap.com/ and axios: https://github.com/axios/axios
+A tiny little news search powered by Newscatcher API. Logo inspired by N(orth)E(ast)W(est)S(outh) with Tibetian colors associated with cardinal direction as written in https://en.wikipedia.org/wiki/Cardinal_direction. The UI is powered by bootstrap: https://getbootstrap.com/ and axios: https://github.com/axios/axios. The main functionality of search is written in vanilla JS. I is responsive.
+
+Demo: https://www.youtube.com/watch?v=CcI0M_WWutA
 
 ## Installation
 * Clone this repo
@@ -11,7 +13,7 @@ git clone https://github.com/Wrishi/newsnova.git
 ```
 cd newsnova
 ```
-* Setting up a conda environment is adviced
+* Setting up a conda environment is adviced<iframe width="560" height="315" src="https://www.youtube.com/embed/CcI0M_WWutA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 conda create -n novanews python=3.8
 conda activate novanews
