@@ -5,8 +5,6 @@ import os
 app = Flask(__name__, static_url_path="/templates", static_folder='./templates/')
 cors = CORS(app)
 
-print(os.environ.get("NEWSCATCHER_API_KEY"))
-
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
