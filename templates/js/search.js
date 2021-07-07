@@ -71,7 +71,7 @@
     });
 
     const setParamsForAPI = () => {
-        params.q = inputParams.q ? inputParams.q: params.q;
+        params.q = inputParams.q;
         params.lang = inputParams.lang ? inputParams.lang: params.lang;
     }
 
@@ -90,6 +90,7 @@
 
     // Makes API call and sets to DOM
     const search = async (settings) => {
+        if (!params.q) { console.log("No query"); return; }
         // Clear previous search
         if(!(settings && settings.more)) {
             searchResults.innerHTML = "";
@@ -98,8 +99,7 @@
 
         // Search more button
         postSearchContainer.innerHTML = "";
-        
-        if (!params.q) { console.log("No query"); return; }
+
         var options = {
             params: params
         };
