@@ -1,4 +1,4 @@
-# News Nova
+# <img src="templates/images/logo/logo32x32.png"/>  News Nova
 
 A tiny little news search powered by Newscatcher API.
 
