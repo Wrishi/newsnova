@@ -12,6 +12,12 @@
 
 .search-count {
     padding: 10px 0;
+    float: left;
+}
+
+.credits {
+    float: right;
+    padding: 10px 0;
 }
 
 .search-results {
