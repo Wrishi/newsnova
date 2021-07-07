@@ -51,7 +51,7 @@
     }
 
     const clearQuery = () => {
-        params.q = "";
+        // params.q = "";
         inputParams.q = "";
         queryInput.value = "";
         queryInput.focus();
