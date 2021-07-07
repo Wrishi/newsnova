@@ -119,7 +119,7 @@
     }
 
     const renderSearchResults = (data) => {
-        console.log(data);
+        // console.log(data);
 
         // Fail check
         if(!data.articles || data.articles.length === 0) {
