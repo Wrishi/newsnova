@@ -1,6 +1,6 @@
 # <img src="templates/images/logo/logo32x32.png"/>  News Nova
 
-A tiny little news search powered by Newscatcher API.
+A tiny little news search powered by Newscatcher API. Logo inspired by N(orth)E(ast)W(est)S(outh) with Tibetian colors associated with cardinal direction as written in https://en.wikipedia.org/wiki/Cardinal_direction
 
 ## Installation
 * Clone this repo
