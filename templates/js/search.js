@@ -1,6 +1,7 @@
 (() => {
     // DOM Elements
     const queryInput = document.getElementById("query-input");
+    const clearQueryInput = document.getElementById("clear-query-input");
     const searchButton = document.getElementById("search-button");
     const languageSelector = document.getElementById("language-select");
     const searchCount = document.getElementById("search-count");
@@ -31,14 +32,30 @@
     const init = () => {
         inputParams.q = queryInput.value;
         inputParams.lang = languageSelector.value;
+
+        queryInput.focus();
     }
 
     // Setters
     const setQuery = (e) => {
         inputParams.q = e.target.value;
+
+        if(inputParams.q.length > 0) {
+            clearQueryInput.classList.remove("hide");
+        } else {
+            clearQueryInput.classList.add("hide");
+        }
     }
     const setLanguage = (e) => {
         inputParams.lang = e.target.value
+    }
+
+    const clearQuery = () => {
+        params.q = "";
+        inputParams.q = "";
+        queryInput.value = "";
+        queryInput.focus();
+        clearQueryInput.classList.add("hide");
     }
 
     // Axios API call instance
@@ -74,7 +91,10 @@
     // Makes API call and sets to DOM
     const search = async (settings) => {
         // Clear previous search
-        if(!(settings && settings.more)) searchResults.innerHTML = "";
+        if(!(settings && settings.more)) {
+            searchResults.innerHTML = "";
+            searchCount.innerHTML = "";
+        }
 
         // Search more button
         postSearchContainer.innerHTML = "";
@@ -156,6 +176,7 @@
     // Param setters
     queryInput.addEventListener("input", setQuery);
     languageSelector.addEventListener("change", setLanguage);
+    clearQueryInput.addEventListener("click", clearQuery);
 
     // Executes function
     searchButton.addEventListener("click", searchOnButtonClick);
